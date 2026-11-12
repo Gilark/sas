@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GHOST | Simon Riley — TF-141</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- LIGHTS LAYER (fixed, behind everything) -->
+<div class="lights-layer">
+  <div class="light light-1"></div>
+  <div class="light light-2"></div>
+  <div class="light light-3"></div>
+  <div class="light light-4"></div>
+  <div class="light light-5"></div>
+</div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-skull">☠</div>
+  <div class="loader-bar"><span id="loaderFill"></span></div>
+  <div class="loader-text">INITIALIZING TF-141...</div>
+</div>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="logo">GHOST<span></span></div>
+  <ul class="nav-links">
+    <li><a href="#hero">HOME</a></li>
+    <li><a href="#identity">IDENTITY</a></li>
+    <li><a href="#mask">MASK</a></li>
+    <li><a href="#stats">STATS</a></li>
+    <li><a href="#timeline">HISTORY</a></li>
+    <li><a href="#gallery">ARCHIVE</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-content">
+    <div class="ghost-stage">
+      <div class="ghost-ring"></div>
+      <div class="ghost-ring ring-2"></div>
+      <img src="ghost-main.png" alt="Ghost" class="ghost-img" id="ghostImg">
+      <h1 class="ghost-name" id="ghostName">GHOST</h1>
+    </div>
+    <p class="hero-sub">LIEUTENANT SIMON RILEY</p>
+    <div class="hero-tag">TASK FORCE 141 // CLASSIFIED</div>
+    <div class="scroll-hint">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>SIMON RILEY ✦ TASK FORCE 141 ✦ SAS ✦ OPERATION KINGFISH ✦ GHOST ✦ LIEUTENANT ✦ SIMON RILEY ✦ TASK FORCE 141 ✦ SAS ✦ OPERATION KINGFISH ✦ GHOST ✦ LIEUTENANT ✦</span>
+  </div>
+</div>
+
+<!-- IDENTITY — ASYMMETRIC BENTO -->
+<section class="bento-section" id="identity">
+  <div class="bento-header reveal-up">
+    <span class="section-tag">// 01 — IDENTITY</span>
+    <h2 class="section-heading">THE MAN <em>BEHIND</em> THE MASK</h2>
+  </div>
+
+  <div class="bento-grid">
+
+    <!-- بزرگ‌ترین کادر: عکس -->
+    <div class="bento-item bento-hero reveal-scale">
+      <div class="visual-frame">
+        <img src="ghost-action.png" alt="Ghost" onerror="this.src='ghost.png'">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        <div class="frame-label">FILE // 141-001</div>
+      </div>
+    </div>
+
+    <!-- کادر متن -->
+    <div class="bento-item bento-text reveal-right">
+      <span class="mini-tag">PROFILE</span>
+      <h3>Simon "Ghost" Riley</h3>
+      <p>A British Special Forces operator. Face hidden. Name whispered. The man who walks into the dark and comes back alone.</p>
+    </div>
+
+    <!-- کادر کوچک: نام -->
+    <div class="bento-item bento-small reveal-up">
+      <span class="mini-label">REAL NAME</span>
+      <strong>Simon Riley</strong>
+    </div>
+
+    <!-- کادر کوچک: درجه -->
+    <div class="bento-item bento-small reveal-up">
+      <span class="mini-label">RANK</span>
+      <strong>Lieutenant</strong>
+    </div>
+
+    <!-- کادر کوچک: ملیت -->
+    <div class="bento-item bento-small reveal-up">
+      <span class="mini-label">NATIONALITY</span>
+      <strong>British</strong>
+    </div>
+
+    <!-- کادر کوچک: واحد -->
+    <div class="bento-item bento-small reveal-up">
+      <span class="mini-label">UNIT</span>
+      <strong>TF-141 / SAS</strong>
+    </div>
+
+  </div>
+</section>
+
+<!-- MASK SECTION -->
+<section class="mask-section" id="mask">
+  <div class="mask-bg"></div>
+  <div class="mask-content">
+    <div class="mask-visual reveal-scale">
+      <img src="ghost-mask.png" alt="Ghost Mask" onerror="this.src='ghost.png'">
+      <div class="mask-glow"></div>
+    </div>
+    <div class="mask-text reveal-left">
+      <span class="section-tag">// 02 — THE MASK</span>
+      <h2 class="section-heading">FEAR <em>BEFORE</em> THE BULLET</h2>
+      <p class="section-body">The skull is not a disguise. It's a weapon. Enemies see the mask before they see the man — and by then, it's already too late.</p>
+      <blockquote class="pull-quote">
+        "I'm not a normal soldier. I'm a shadow."
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section" id="stats">
+  <div class="stats-header reveal-up">
+    <span class="section-tag">// 03 — OPERATIONAL DATA</span>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card reveal-up">
+      <div class="stat-num" data-target="141">0</div>
+      <div class="stat-label">TASK FORCE</div>
+    </div>
+    <div class="stat-card reveal-up">
+      <div class="stat-num" data-target="12">0</div>
+      <div class="stat-label">YEARS SERVICE</div>
+    </div>
+    <div class="stat-card reveal-up">
+      <div class="stat-num" data-target="99">0</div>
+      <div class="stat-label">MISSIONS</div>
+    </div>
+    <div class="stat-card reveal-up">
+      <div class="stat-num" data-target="0">0</div>
+      <div class="stat-label">FACES SEEN</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section" id="timeline">
+  <div class="timeline-header reveal-up">
+    <span class="section-tag">// 04 — HISTORY</span>
+    <h2 class="section-heading">THE <em>OPERATIONAL</em> PATH</h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item reveal-left">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-year">2003</span>
+        <h3>ENTRY INTO SAS</h3>
+        <p>After returning from Afghanistan, Riley joins the Special Air Service.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal-right">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-year">—</span>
+        <h3>TASK FORCE 141</h3>
+        <p>Recruited by Captain Price into the elite Task Force 141.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal-left">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-year">—</span>
+        <h3>OPERATION KINGFISH</h3>
+        <p>Key role in the covert operation against Manuel Roba.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal-right">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-year">—</span>
+        <h3>SHEPHERD'S BETRAYAL</h3>
+        <p>Betrayed by General Shepherd. But the legend never died.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="gallery-header reveal-up">
+    <span class="section-tag">// 05 — VISUAL ARCHIVE</span>
+    <h2 class="section-heading">CLASSIFIED <em>FILES</em></h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal-up"><img src="gallery-1.jpg" alt="Ghost 1" onerror="this.src='bg-1.jpg'"><span class="gallery-num">FILE // 01</span></div>
+    <div class="gallery-item reveal-up"><img src="gallery-2.jpg" alt="Ghost 2" onerror="this.src='bg-1.jpg'"><span class="gallery-num">FILE // 02</span></div>
+    <div class="gallery-item reveal-up"><img src="gallery-3.jpg" alt="Ghost 3" onerror="this.src='bg-1.jpg'"><span class="gallery-num">FILE // 03</span></div>
+    <div class="gallery-item reveal-up"><img src="gallery-4.jpg" alt="Ghost 4" onerror="this.src='bg-1.jpg'"><span class="gallery-num">FILE // 04</span></div>
+    <div class="gallery-item reveal-up"><img src="gallery-5.jpg" alt="Ghost 5" onerror="this.src='bg-1.jpg'"><span class="gallery-num">FILE // 05</span></div>
+    <div class="gallery-item reveal-up"><img src="gallery-6.jpg" alt="Ghost 6" onerror="this.src='bg-1.jpg'"><span class="gallery-num">FILE // 06</span></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-card reveal-scale">
+    <h2>TF-141 <em>NEVER DIES</em></h2>
+    <p>Neither does Ghost.</p>
+  </div>
+</section>
+
+<footer>
+  <p>GHOST // SIMON RILEY // TF-141 // CLASSIFIED</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
