@@ -1,3 +1,7 @@
+// ===== DEVICE DETECTION =====
+const isMobile = window.matchMedia('(max-width: 900px)').matches;
+const isTouch = 'ontouchstart' in window;
+
 // ===== LOADER =====
 const loader = document.getElementById('loader');
 const loaderFill = document.getElementById('loaderFill');
@@ -13,7 +17,7 @@ const loadInterval = setInterval(() => {
   loaderFill.style.width = loadPct + '%';
 }, 120);
 
-// ===== SCROLL EFFECTS =====
+// ===== SCROLL ELEMENTS =====
 const progressBar = document.getElementById('progressBar');
 const navbar = document.getElementById('navbar');
 const heroBg = document.getElementById('heroBg');
@@ -29,7 +33,7 @@ function onScroll() {
   progressBar.style.width = (y / docH) * 100 + '%';
   navbar.classList.toggle('scrolled', y > 60);
 
-  if (y < window.innerHeight) {
+  if (!isMobile && y < window.innerHeight) {
     heroBg.style.transform = `translateY(${y * 0.4}px) scale(${1 + y * 0.0003})`;
     ghostImg.style.transform = `translateY(${y * 0.3}px) scale(${1 - y * 0.0005})`;
     ghostName.style.opacity = Math.max(0, 1 - y / (window.innerHeight * 0.6));
@@ -43,7 +47,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ===== INTERSECTION OBSERVER =====
+// ===== INTERSECTION OBSERVER (REVEAL) =====
 const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale');
 
 const io = new IntersectionObserver((entries) => {
@@ -57,7 +61,7 @@ const io = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => io.observe(el));
 
-// ===== COUNTER =====
+// ===== COUNTER ANIMATION =====
 const statNums = document.querySelectorAll('.stat-num');
 
 const counterObserver = new IntersectionObserver((entries) => {
@@ -65,6 +69,13 @@ const counterObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const el = entry.target;
       const target = +el.dataset.target;
+
+      if (target === 0) {
+        el.textContent = '0';
+        counterObserver.unobserve(el);
+        return;
+      }
+
       let current = 0;
       const step = Math.max(1, Math.floor(target / 40));
 
@@ -93,18 +104,23 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-// ===== MOUSE PARALLAX =====
-document.addEventListener('mousemove', (e) => {
-  if (window.pageYOffset > window.innerHeight) return;
-  const x = (e.clientX / window.innerWidth - 0.5) * 20;
-  const y = (e.clientY / window.innerHeight - 0.5) * 20;
-  ghostImg.style.transform = `translate(${x}px, ${y}px)`;
-});
+// ===== MOUSE PARALLAX (DESKTOP ONLY) =====
+if (!isTouch && !isMobile) {
+  document.addEventListener('mousemove', (e) => {
+    if (window.pageYOffset > window.innerHeight) return;
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    ghostImg.style.transform = `translate(${x}px, ${y}px)`;
+  });
+}
 
 // ===== DUST PARTICLES =====
 function createDust() {
   const hero = document.querySelector('.hero');
-  for (let i = 0; i < 30; i++) {
+  if (!hero) return;
+  const count = isMobile ? 12 : 30;
+
+  for (let i = 0; i < count; i++) {
     const d = document.createElement('div');
     const size = Math.random() * 3 + 1;
     d.style.cssText = `
@@ -135,5 +151,8 @@ dustStyle.textContent = `
 `;
 document.head.appendChild(dustStyle);
 
-window.addEventListener('load', createDust);
-onScroll();
+// ===== INIT =====
+window.addEventListener('load', () => {
+  createDust();
+  onScroll();
+});
