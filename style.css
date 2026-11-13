@@ -865,7 +865,7 @@ body {
   max-width: 900px;
   padding: 5rem 3rem;
   border-radius: var(--radius);
-  background: linear-gradient(145deg, #f5f5f5, #999);
+  background: linear-gradient(145deg, #000000, #999);
   text-align: center;
   position: relative;
   overflow: hidden;
